@@ -1,11 +1,20 @@
 package Iterator;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Principal {
     public static void main(String[] args) {
+        List<Produto> listaProdutos = inicializaListaProduto();
+
+        Iterator ordenado = new OrdenaCategoriaPreco(listaProdutos);
+        System.out.println("Lista de produtos:\n");
+        while (ordenado.hasMore()) {
+            System.out.println(ordenado.getNext());
+        }
+    }
+
+    public static List<Produto> inicializaListaProduto(){
         List<Produto> listaProdutos = new ArrayList<>();
         String categoria1 = "Brinquedo";
         String categoria2 = "Decoracao";
@@ -25,15 +34,15 @@ public class Principal {
         Produto p6 = new Produto("Kit quadros", 40, categoria2);
         listaProdutos.add(p6);
 
-        Produto p7 = new Produto("Luminaria", 150, categoria3);
+        Produto p7 = new Produto("TV", 1500, categoria3);
         listaProdutos.add(p7);
-        Produto p8  = new Produto("Kit almofadas", 90, categoria3);
+        Produto p8  = new Produto("Cafeteira", 200, categoria3);
         listaProdutos.add(p8);
-        Produto p9 = new Produto("Kit quadros", 40, categoria3);
+        Produto p9 = new Produto("Batedeira", 150, categoria3);
         listaProdutos.add(p9);
-        Produto p10 = new Produto("Kit quadros", 40, categoria3);
+        Produto p10 = new Produto("Sanduicheira", 80, categoria3);
         listaProdutos.add(p10);
 
-
+        return listaProdutos;
     }
 }

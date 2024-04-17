@@ -1,23 +1,24 @@
 package Iterator;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 public class OrdenaCategoriaPreco implements Iterator{
     private List<Produto> produtos;
+    private int index;
 
     public OrdenaCategoriaPreco(List<Produto> produtos){
         this.produtos = produtos;
-        ordena(produtos);
+        Collections.sort(produtos);
+        index=0;
     }
 
     public Produto getNext() {
-        produtos.
+        return produtos.get(index++);
     }
 
     public boolean hasMore() {
-        return produtos
+        return produtos.size()>index;
     }
 
 }
