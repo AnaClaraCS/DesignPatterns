@@ -45,7 +45,7 @@ public class TarefaComposite implements InterfaceTarefa{
         subtarefas.remove(tarefa);
     }
 
-    public List getSubtarefas(){
+    public List<InterfaceTarefa> getSubtarefas(){
         return subtarefas;
     }
 
